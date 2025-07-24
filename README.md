@@ -12,8 +12,6 @@ A RESTful API for managing products built with NestJS, TypeORM, PostgreSQL, and 
 - [API Endpoints](#api-endpoints)
 - [Data Models](#data-models)
 - [Request/Response Examples](#requestresponse-examples)
-- [Error Handling](#error-handling)
-- [Testing](#testing)
 
 ## Features
 
@@ -871,72 +869,6 @@ curl -X DELETE http://localhost:3000/products/{product-id} \
   -H "Authorization: Bearer YOUR_JWT_TOKEN_HERE"
 ```
 
-- Show proper error messages
-
-## Testing
-
-### Timestamps Test
-
-A test script is provided to demonstrate the automatic timestamp functionality:
-
-```bash
-# Make sure the API server is running first
-npm run start:dev
-
-# In another terminal, run the timestamp test
-node test-timestamps.js
-```
-
-The test script will:
-
-- Create a product and show initial timestamps
-- Wait 2 seconds, then update the product
-- Demonstrate that `createdAt` remains unchanged while `updatedAt` is updated
-- Clean up by deleting the test product
-
-### Empty Name Validation Test
-
-A test script is provided to demonstrate empty name validation:
-
-```bash
-# Make sure the API server is running first
-npm run start:dev
-
-# In another terminal, run the empty name validation test
-node test-empty-name-validation.js
-```
-
-The validation test will:
-
-- Test creating products with empty names (should fail)
-- Test creating products with whitespace-only names (should fail)
-- Test updating products with empty names (should fail)
-- Test various whitespace scenarios
-- Demonstrate that valid names work correctly
-- Show proper error messages
-
-### Filtering Test
-
-A comprehensive test script is provided to demonstrate filtering functionality:
-
-```bash
-# Make sure the API server is running first
-npm run start:dev
-
-# In another terminal, run the filtering test
-node test-filtering.js
-```
-
-The filtering test will:
-
-- Create test products with various categories and tags
-- Test category filtering (case-insensitive partial matching)
-- Test tags filtering (OR logic with partial matching)
-- Test combined category and tags filtering
-- Test filtering with pagination
-- Test edge cases and error handling
-- Clean up test data automatically
-
 ## Development Commands
 
 ```bash
@@ -944,46 +876,15 @@ The filtering test will:
 npm install
 
 # Start development server
-npm run start:dev
+npm run start
 
 # Build for production
 npm run build
-
-# Run linting
-npm run lint
-
-# Format code
-npm run format
-
-# Run tests
-npm run test
-
-# Run test coverage
-npm run test:cov
-
-# Test timestamps (requires server to be running)
-node test-timestamps.js
-
-# Test empty name validation (requires server to be running)
-node test-empty-name-validation.js
-
-# Test filtering functionality (requires server to be running)
-node test-filtering.js
 ```
 
 ## Database Schema
 
 The application uses TypeORM with PostgreSQL. The database schema is automatically synchronized in development mode.
-
-### Schema Migration Notes
-
-**Recent Changes (v2.0):**
-
-- Removed `isActive` field (boolean)
-- Added `category` field (string, optional)
-- Added `tags` field (array of strings, optional)
-
-If you have existing data, you may need to manually migrate or drop and recreate the database in development.
 
 ### Products Table
 
@@ -1030,9 +931,7 @@ If you have existing data, you may need to manually migrate or drop and recreate
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Add tests for new functionality
-5. Run the test suite
-6. Submit a pull request
+4. Submit a pull request
 
 ## License
 
