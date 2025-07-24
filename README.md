@@ -85,15 +85,7 @@ JWT_EXPIRES_IN=24h
 ## Running the Application
 
 ```bash
-# Development mode
-npm run start:dev
-
-# Production mode
-npm run build
-npm run start:prod
-
-# Debug mode
-npm run start:debug
+npm run start
 ```
 
 The API will be available at `http://localhost:3000`
