@@ -98,6 +98,13 @@ The API will be available at `http://localhost:3000`
 http://localhost:3000
 ```
 
+> [!NOTE]  
+> This application has been deployed to render, here is the url:
+
+```
+ https://product-api-d5eu.onrender.com
+```
+
 ### Authentication Endpoints
 
 | Method | Endpoint         | Description         | Authentication |
